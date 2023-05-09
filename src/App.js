@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import Project from './components/Project';
+import About from './components/About';
+import Resume from './components/Resume';
+import { Container } from '@mui/material';
+import { styled } from '@mui/system';
+import { ThemeProvider } from '@mui/material/styles';
+import theme from './theme';
+
+const StyledContainer = styled(Container)`
+  margin-top: ${({ theme }) => theme.spacing(4)};
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <Navbar />
+        <StyledContainer>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<Project />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/resume" element={<Resume />} />
+          </Routes>
+        </StyledContainer>
+      </Router>
+    </ThemeProvider>
   );
 }
 
