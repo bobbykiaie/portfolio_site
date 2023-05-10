@@ -1,5 +1,5 @@
 {
-  "hosting": {firebase deploy --only hosting:bobbykiaie
+  "hosting": {
     "site": "bobbykiaie",
     "public": "public",
     "ignore": [
