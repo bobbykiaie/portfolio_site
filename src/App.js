@@ -9,7 +9,23 @@ import { Container } from '@mui/material';
 import { styled } from '@mui/system';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from './theme';
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCC9oo7jpxb8-dz1jaJWn93vUSqZr6MLVI",
+  authDomain: "portfolio-site-910c4.firebaseapp.com",
+  projectId: "portfolio-site-910c4",
+  storageBucket: "portfolio-site-910c4.appspot.com",
+  messagingSenderId: "81523491590",
+  appId: "1:81523491590:web:06918465d79948a4d7d487"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 const StyledContainer = styled(Container)`
   margin-top: ${({ theme }) => theme.spacing(4)};
 `;
